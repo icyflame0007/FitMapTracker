@@ -16,6 +16,7 @@ dependencyResolutionManagement {
         maven(url = "https://jitpack.io")
 
     }
+
 }
 
 rootProject.name = "FitMap Tracker"
