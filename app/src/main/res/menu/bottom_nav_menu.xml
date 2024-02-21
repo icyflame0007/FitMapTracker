@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/runFragment"
+        android:icon="@drawable/run_icon"
+        android:title="Your Runs" />
+    <item
+        android:id="@+id/statisticsFragment"
+        android:icon="@drawable/stats_icon"
+        android:title="Statistics" />
+    <item
+        android:id="@+id/settingsFragment"
+        android:icon="@drawable/settings_icon"
+        android:title="Settings" />
+
+</menu>
+

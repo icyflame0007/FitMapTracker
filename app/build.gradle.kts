@@ -63,7 +63,6 @@ dependencies {
 
 
     //Dagger - Hilt
-
     implementation("com.google.dagger:hilt-android:2.48")
     ksp("com.google.dagger:hilt-compiler:2.48")
 
@@ -78,8 +77,8 @@ dependencies {
     implementation ("androidx.lifecycle:lifecycle-runtime-ktx:2.7.0")
 
     // Navigation Components
-    implementation ("androidx.navigation:navigation-fragment-ktx:2.7.6")
-    implementation ("androidx.navigation:navigation-ui-ktx:2.7.6")
+    implementation ("androidx.navigation:navigation-fragment-ktx:2.7.7")
+    implementation ("androidx.navigation:navigation-ui-ktx:2.7.7")
 
     //Glide
     implementation ("com.github.bumptech.glide:glide:4.16.0")
@@ -104,6 +103,11 @@ dependencies {
 
 
     implementation ("androidx.lifecycle:lifecycle-runtime:2.7.0")
+
+
+    //Bottom sheet
+
+    implementation ("nl.joery.animatedbottombar:library:1.1.0")
 
 
 }
