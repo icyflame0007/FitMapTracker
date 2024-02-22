@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.MainActivity">
+    <include layout="@layout/toolbar"/>
 
     <FrameLayout
         android:id="@+id/flFragment"
@@ -33,7 +34,7 @@
         app:abb_indicatorAppearance="round"
         app:abb_indicatorHeight="4dp"
         app:abb_indicatorMargin="16dp"
-        app:abb_selectedIndex="2"
+        app:abb_selectedIndex="0"
         app:abb_selectedTabType="text"
         app:abb_tabs="@menu/bottom_nav_menu"
 
