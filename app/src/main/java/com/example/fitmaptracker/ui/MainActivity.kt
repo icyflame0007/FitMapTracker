@@ -1,5 +1,6 @@
 package com.example.fitmaptracker.ui
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
@@ -16,6 +17,7 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import com.example.fitmaptracker.R
 import com.example.fitmaptracker.R.id.navHostFragment
 import com.example.fitmaptracker.db.RunDAO
+import com.example.fitmaptracker.other.Constants.ACTION_SHOW_TRACKING_FRAGMENT
 import dagger.hilt.android.AndroidEntryPoint
 import nl.joery.animatedbottombar.AnimatedBottomBar
 import javax.inject.Inject
@@ -32,6 +34,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
+
 
         toolbar = findViewById(R.id.toolbar)
         bottom_navigation = findViewById(R.id.bottom_navigation)
@@ -59,6 +62,7 @@ class MainActivity : AppCompatActivity() {
                 }
 
             })
+        navigateToTrackingFragmentIfNeeded(intent)
 
     }
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -70,6 +74,20 @@ class MainActivity : AppCompatActivity() {
     override fun onSupportNavigateUp(): Boolean {
         navController.navigateUp()
         return true
+    }
+
+    override fun onNewIntent(intent: Intent?) {
+        super.onNewIntent(intent)
+        navigateToTrackingFragmentIfNeeded(intent)
+    }
+
+
+    private fun navigateToTrackingFragmentIfNeeded(intent: Intent?)
+    {
+        if(intent?.action == ACTION_SHOW_TRACKING_FRAGMENT)
+        {
+            navHostFragment.findNavController().navigate(R.id.action_global_trackingFragment)
+        }
     }
 
 

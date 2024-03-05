@@ -1,7 +1,50 @@
 package com.example.fitmaptracker.ui.fragments
 
+import android.content.SharedPreferences
+import android.os.Bundle
+import android.view.View
+import android.widget.Button
+import android.widget.EditText
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.example.fitmaptracker.R
+import com.example.fitmaptracker.other.Constants
+import com.example.fitmaptracker.other.Constants.EMPTY_STRING
+import com.example.fitmaptracker.other.Constants.KEY_NAME
+import com.example.fitmaptracker.other.Constants.KEY_WEIGHT
+import com.google.android.material.snackbar.Snackbar
+import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
+@AndroidEntryPoint
 class SettingsFragment : Fragment(R.layout.fragment_settings) {
-}
+    @Inject
+    lateinit var appPreferences: SharedPreferences
+
+
+    lateinit var et_name :EditText
+    lateinit var et_weight:EditText
+    lateinit var  btn_apply_changes : Button
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        et_name = view.findViewById(R.id.et_name)
+        et_weight = view.findViewById(R.id.et_weight)
+        btn_apply_changes =view.findViewById(R.id.btn_apply_changes)
+
+        btn_apply_changes.setOnClickListener {
+            if(!(et_name.text.isNullOrEmpty() || et_weight.text.isNullOrEmpty())){
+                appPreferences.edit()
+                    .putString(KEY_NAME,et_name.text.toString())
+                    .putString(Constants.KEY_WEIGHT,et_weight.text.toString())
+                    .apply()
+                Snackbar.make(it,"Changes saved successfully", Snackbar.LENGTH_SHORT).show()
+            }
+            else Snackbar.make(it,"All fields must be filled", Snackbar.LENGTH_SHORT).show()
+        }
+        et_name.setText(appPreferences.getString(KEY_NAME, EMPTY_STRING))
+        et_weight.setText(appPreferences.getString(KEY_WEIGHT, EMPTY_STRING))
+
+        }
+    }

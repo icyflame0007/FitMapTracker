@@ -1,4 +1,13 @@
 <resources>
     <string name="app_name">FitMap Tracker</string>
+    <string-array name="filter_options">
+        <item>Date</item>
+        <item>Running Time</item>
+        <item>Distance</item>
+        <item>Average Speed</item>
+        <item>Calories Burned</item>
+    </string-array>
+    <string name="undo_deletion">Undo</string>
+    <string name="dismiss_deletion">Dismiss</string>
     <string name="google_maps_key">AIzaSyDOrzuQVszUUujhoJaYgb_b_OO29i_hk_o</string>
 </resources>
