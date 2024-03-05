@@ -74,6 +74,7 @@ class TrackingFragment : Fragment(R.layout.fragment_tracking) {
 
 
 
+
         btntogglerun.setOnClickListener {
             sendCommmadToService(ACTION_START_OR_RESUME_SERVICE)
         }
