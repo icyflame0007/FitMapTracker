@@ -30,7 +30,6 @@ interface RunDAO {
     fun getAllRunsSortedByTimeInMillis(): LiveData<List<Run>>
 
 
-
     @Query("SELECT SUM(timeInMillis) FROM running_table")
     fun getTotalTimeInMillis(): Flow<Long>
 

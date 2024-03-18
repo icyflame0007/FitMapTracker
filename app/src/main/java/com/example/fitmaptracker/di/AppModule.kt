@@ -32,7 +32,6 @@ object AppModule {
             .build()
     }
 
-
     @Singleton
     @Provides
     fun provideRunDao(db:RunningDatabase) :RunDAO

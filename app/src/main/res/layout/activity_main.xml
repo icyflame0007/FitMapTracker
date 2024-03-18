@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:id="@+id/rootView"
     android:layout_height="match_parent"
+    android:background="@drawable/background"
     tools:context=".ui.MainActivity">
     <include layout="@layout/toolbar"/>
 
@@ -38,7 +39,8 @@
         app:abb_selectedIndex="0"
         app:abb_selectedTabType="text"
         app:abb_tabs="@menu/bottom_nav_menu"
-
+        android:backgroundTint="@color/grey"
+        app:abb_badgeTextColor="@color/lavender"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

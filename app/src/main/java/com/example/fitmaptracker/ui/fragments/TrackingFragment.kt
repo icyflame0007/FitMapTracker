@@ -80,6 +80,7 @@ class TrackingFragment : Fragment(R.layout.fragment_tracking) {
         }
         mapView.getMapAsync {
             map = it
+
             drawAllPolylines()
         }
         mapView.onCreate(savedInstanceState)

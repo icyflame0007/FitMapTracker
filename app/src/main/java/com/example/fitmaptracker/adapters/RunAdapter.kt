@@ -1,9 +1,11 @@
 package com.example.fitmaptracker.adapters
 
+import android.animation.AnimatorInflater
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.example.fitmaptracker.R
@@ -54,6 +56,8 @@ class RunAdapter(private var runs:List<Run>, var lambdaDelete:(Run)->Unit)  : Re
 
        }
     }
+
+
     fun submitList(newRuns:List<Run>){
         runs=newRuns
         notifyDataSetChanged()

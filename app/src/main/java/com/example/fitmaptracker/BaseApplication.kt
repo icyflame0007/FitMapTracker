@@ -8,7 +8,6 @@ import timber.log.Timber
 class BaseApplication : Application()
 {
 // This tells that we want to inject dependency using daggerhilt
-
     override fun onCreate() {
         super.onCreate()
         Timber.plant(Timber.DebugTree())

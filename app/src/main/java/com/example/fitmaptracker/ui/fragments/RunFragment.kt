@@ -2,6 +2,8 @@ package com.example.fitmaptracker.ui.fragments
 
 import android.os.Bundle
 import android.view.View
+import android.view.animation.AnimationUtils
+import android.view.animation.LayoutAnimationController
 import android.widget.AdapterView
 import android.widget.Spinner
 import android.widget.TextView
@@ -11,11 +13,11 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.fitmaptracker.CustomItemAnimator
 import com.example.fitmaptracker.R
 import com.example.fitmaptracker.adapters.RunAdapter
 import com.example.fitmaptracker.other.Constants
 import com.example.fitmaptracker.other.Constants.hasLocationPerm
-import com.example.fitmaptracker.other.Constants.locationPermissions
 import com.example.fitmaptracker.ui.viewmodels.MainViewModel
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.snackbar.BaseTransientBottomBar
@@ -24,6 +26,7 @@ import dagger.hilt.android.AndroidEntryPoint
 import pub.devrel.easypermissions.AppSettingsDialog
 import pub.devrel.easypermissions.EasyPermissions
 import javax.inject.Inject
+
 
 @AndroidEntryPoint
 class RunFragment : Fragment(R.layout.fragment_run), EasyPermissions.PermissionCallbacks {
@@ -73,7 +76,11 @@ class RunFragment : Fragment(R.layout.fragment_run), EasyPermissions.PermissionC
         rv_runs.apply {
             adapter=runAdapter
             layoutManager= LinearLayoutManager(requireContext(),RecyclerView.VERTICAL,false)
+            itemAnimator = CustomItemAnimator(R.anim.recycler_item_anim)
         }
+
+
+
         observeLiveData()
 
         sp_filter.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{

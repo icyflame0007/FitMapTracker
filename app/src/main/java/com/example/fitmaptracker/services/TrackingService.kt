@@ -292,7 +292,6 @@ class TrackingService : LifecycleService() {
         }
     }
 
-
     private fun killService(){
         postInitialValues()
         stopForeground(android.app.Service.STOP_FOREGROUND_REMOVE)
