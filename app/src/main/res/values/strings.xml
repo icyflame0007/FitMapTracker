@@ -10,4 +10,5 @@
     <string name="undo_deletion">Undo</string>
     <string name="dismiss_deletion">Dismiss</string>
     <string name="google_maps_key">AIzaSyDOrzuQVszUUujhoJaYgb_b_OO29i_hk_o</string>
+    <string name="title_activity_maps">MapsActivity</string>
 </resources>

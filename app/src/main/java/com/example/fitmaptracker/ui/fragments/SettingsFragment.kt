@@ -10,6 +10,8 @@ import androidx.cardview.widget.CardView
 import androidx.fragment.app.Fragment
 import com.example.fitmaptracker.ui.activities.BmiActivity
 import com.example.fitmaptracker.R
+import com.example.fitmaptracker.blood.DonateBloodActivity
+import com.example.fitmaptracker.blood.MapsActivity
 import com.example.fitmaptracker.other.Constants
 import com.example.fitmaptracker.other.Constants.EMPTY_STRING
 import com.example.fitmaptracker.other.Constants.KEY_NAME
@@ -31,6 +33,12 @@ class SettingsFragment : Fragment(R.layout.fragment_settings) {
     lateinit var bmi_card_view :CardView
     lateinit var  tdee_card_view :CardView
 
+    lateinit var btn_donate :Button
+    lateinit var  btn_request : Button
+
+
+
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -39,6 +47,8 @@ class SettingsFragment : Fragment(R.layout.fragment_settings) {
         btn_apply_changes =view.findViewById(R.id.btn_apply_changes)
         bmi_card_view =view.findViewById(R.id.bmiCardView)
         tdee_card_view = view.findViewById(R.id.tdeeCardView)
+        btn_donate = view.findViewById(R.id.btn_donate)
+        btn_request = view.findViewById(R.id.btn_request)
 
         btn_apply_changes.setOnClickListener {
             if(!(et_name.text.isNullOrEmpty() || et_weight.text.isNullOrEmpty())){
@@ -66,6 +76,15 @@ class SettingsFragment : Fragment(R.layout.fragment_settings) {
             val intent = Intent(context, TdeeActivity::class.java)
             startActivity(intent)
 
+        }
+
+        btn_donate.setOnClickListener {
+            startActivity(Intent(context,DonateBloodActivity::class.java))
+        }
+
+        btn_request.setOnClickListener {
+
+            startActivity(Intent(context,MapsActivity::class.java))
         }
 
 

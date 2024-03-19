@@ -4,6 +4,7 @@ plugins {
     id("dagger.hilt.android.plugin")
     id("com.google.devtools.ksp")
     id("com.google.gms.google-services")
+    id("com.google.android.libraries.mapsplatform.secrets-gradle-plugin")
 
 }
 
@@ -39,6 +40,9 @@ android {
         jvmTarget = "1.8"
     }
     buildToolsVersion = "33.0.1"
+    buildFeatures {
+        viewBinding = true
+    }
 }
 
 dependencies {
