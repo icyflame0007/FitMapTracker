@@ -14,6 +14,7 @@ import android.widget.EditText
 import android.widget.RadioButton
 import android.widget.RadioGroup
 import android.widget.Toast
+import androidx.activity.enableEdgeToEdge
 import androidx.core.app.ActivityCompat
 
 import com.google.android.gms.location.FusedLocationProviderClient
@@ -36,6 +37,7 @@ class DonateBloodActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_donate_blood)
+        enableEdgeToEdge()
 
         nameEditText = findViewById(R.id.nameEditText)
         bloodGroupEditText = findViewById(R.id.bloodGroupEditText)
@@ -70,7 +72,7 @@ class DonateBloodActivity : AppCompatActivity() {
                     android.Manifest.permission.ACCESS_COARSE_LOCATION
                 ) != PackageManager.PERMISSION_GRANTED
             ) {
-                // TODO: Consider calling
+                //  TODO: Consider calling
                 //    ActivityCompat#requestPermissions
                 // here to request the missing permissions, and then overriding
                 //   public void onRequestPermissionsResult(int requestCode, String[] permissions,

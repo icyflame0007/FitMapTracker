@@ -1,6 +1,7 @@
 package com.example.fitmaptracker.ui.fragments
 
 import android.os.Bundle
+import android.view.HapticFeedbackConstants
 import android.view.View
 import android.view.animation.AnimationUtils
 import android.view.animation.LayoutAnimationController
@@ -69,6 +70,7 @@ class RunFragment : Fragment(R.layout.fragment_run), EasyPermissions.PermissionC
 
 
         fab.setOnClickListener {
+            it.performHapticFeedback(HapticFeedbackConstants.VIRTUAL_KEY)
             findNavController().navigate(R.id.action_runFragment_to_trackingFragment)
         }
         requestPerms()

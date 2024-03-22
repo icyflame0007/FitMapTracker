@@ -6,17 +6,16 @@
     android:layout_height="match_parent"
     android:background="@drawable/background">
 
-
     <androidx.cardview.widget.CardView
         android:id="@+id/bmiCardView"
         android:layout_width="250dp"
-        android:layout_height="0dp"
+        android:layout_height="140dp"
         android:layout_marginTop="70dp"
-        android:layout_marginBottom="343dp"
         app:cardCornerRadius="20dp"
-        app:layout_constraintBottom_toTopOf="@+id/btn_donate"
-        app:layout_constraintEnd_toEndOf="parent"
 
+        app:layout_constraintBottom_toTopOf="@+id/tdeeCardView"
+
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -35,6 +34,7 @@
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.502"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -48,7 +48,6 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/tdeeCardView"
         android:layout_width="250dp"
-
         android:layout_height="140dp"
         android:layout_below="@id/bmiCardView"
         android:layout_margin="25dp"
@@ -56,8 +55,7 @@
         app:cardCornerRadius="20dp"
         app:layout_constraintBottom_toTopOf="@+id/et_name"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bmiCardView">
+        app:layout_constraintStart_toStartOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -121,26 +119,6 @@
         app:layout_constraintStart_toStartOf="@+id/et_weight"
         app:layout_constraintTop_toBottomOf="@+id/et_weight" />
 
-    <Button
-        android:id="@+id/btn_donate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="15dp"
-        android:layout_marginBottom="130dp"
-        android:text="Donate Blood"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/btn_apply_changes"
-        app:layout_constraintTop_toBottomOf="@+id/bmiCardView" />
-
-    <Button
-        android:id="@+id/btn_request"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="14dp"
-        android:text="Request Blood"
-        app:layout_constraintBottom_toTopOf="@+id/btn_apply_changes"
-        app:layout_constraintEnd_toEndOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

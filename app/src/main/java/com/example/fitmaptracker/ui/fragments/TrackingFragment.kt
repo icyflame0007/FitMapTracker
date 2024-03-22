@@ -4,6 +4,7 @@ import android.content.Intent
 import android.content.SharedPreferences
 import android.graphics.Color
 import android.os.Bundle
+import android.view.HapticFeedbackConstants
 import android.view.View
 import android.widget.Button
 import android.widget.TextView
@@ -76,10 +77,13 @@ class TrackingFragment : Fragment(R.layout.fragment_tracking) {
 
 
         btntogglerun.setOnClickListener {
+            it.performHapticFeedback(HapticFeedbackConstants.CONFIRM)
             sendCommmadToService(ACTION_START_OR_RESUME_SERVICE)
         }
         mapView.getMapAsync {
             map = it
+
+
 
             drawAllPolylines()
         }
@@ -99,11 +103,13 @@ class TrackingFragment : Fragment(R.layout.fragment_tracking) {
             }
         }
         btn_finish_run.setOnClickListener {
+            it.performHapticFeedback(HapticFeedbackConstants.TOGGLE_OFF)
             endRunAndSaveDb()
             btn_finish_run.remove()
 //                tvTimer.text="00:00:00:00"
         }
         btn_cancel_run.setOnClickListener {
+            it.performHapticFeedback(HapticFeedbackConstants.REJECT)
             AlertDialog.Builder(requireContext())
                 .setTitle("Are you sure?")
                 .setCancelable(false)

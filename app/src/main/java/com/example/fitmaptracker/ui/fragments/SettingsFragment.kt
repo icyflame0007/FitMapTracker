@@ -33,9 +33,6 @@ class SettingsFragment : Fragment(R.layout.fragment_settings) {
     lateinit var bmi_card_view :CardView
     lateinit var  tdee_card_view :CardView
 
-    lateinit var btn_donate :Button
-    lateinit var  btn_request : Button
-
 
 
 
@@ -47,8 +44,7 @@ class SettingsFragment : Fragment(R.layout.fragment_settings) {
         btn_apply_changes =view.findViewById(R.id.btn_apply_changes)
         bmi_card_view =view.findViewById(R.id.bmiCardView)
         tdee_card_view = view.findViewById(R.id.tdeeCardView)
-        btn_donate = view.findViewById(R.id.btn_donate)
-        btn_request = view.findViewById(R.id.btn_request)
+
 
         btn_apply_changes.setOnClickListener {
             if(!(et_name.text.isNullOrEmpty() || et_weight.text.isNullOrEmpty())){
@@ -78,14 +74,6 @@ class SettingsFragment : Fragment(R.layout.fragment_settings) {
 
         }
 
-        btn_donate.setOnClickListener {
-            startActivity(Intent(context,DonateBloodActivity::class.java))
-        }
-
-        btn_request.setOnClickListener {
-
-            startActivity(Intent(context,MapsActivity::class.java))
-        }
 
 
         }

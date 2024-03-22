@@ -13,6 +13,17 @@
         android:id="@+id/settingsFragment"
         android:icon="@drawable/settings_icon"
         android:title="Settings" />
+    <item
+        android:id="@+id/donate_blood"
+        android:icon="@drawable/donar"
+        android:title="Donate Blood" />
+    <item
+        android:id="@+id/request_blood"
+        android:icon="@drawable/blood_request"
+        android:title="Request Blood" />
+
+
+
 
 </menu>
 
