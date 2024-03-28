@@ -1,6 +1,7 @@
 package com.example.fitmaptracker.ui.fragments
 
 import android.graphics.Color
+import android.graphics.drawable.Drawable
 import android.os.Bundle
 import android.view.View
 import android.widget.TextView
@@ -16,6 +17,7 @@ import com.github.mikephil.charting.components.XAxis
 import com.github.mikephil.charting.data.BarData
 import com.github.mikephil.charting.data.BarDataSet
 import com.github.mikephil.charting.data.BarEntry
+import com.github.mikephil.charting.utils.ColorTemplate
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -72,20 +74,24 @@ class StatisticsFragment : Fragment(R.layout.fragment_statistics) {
             axisLeft.apply {
                 axisLineColor= Color.WHITE
                 textColor= Color.WHITE
+
                 setDrawGridLines(false)
             }
             axisLeft.apply {
                 axisLineColor= Color.WHITE
                 textColor= Color.WHITE
+
                 setDrawGridLines(false)
             }
-            description.text="Abg Speed Over Time"
+            description.text="Avg Speed Over Time"
             legend.isEnabled=false
+
 
             viewModel.getRunsSortedByDate().observe(viewLifecycleOwner){
                 it?.let{
                     val avgSpeedBarEntries = it.indices.map { i -> BarEntry(i.toFloat(), it[i].avgSpeedInKMH) }
                     val barDataSet = BarDataSet(avgSpeedBarEntries,"Avg Speeds Over Time ")
+                    barDataSet.setColor(Color.parseColor("#8692f7"))
                     val barData = BarData(barDataSet)
                     data=barData
                 }

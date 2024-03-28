@@ -1,50 +1,84 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_marginTop="100dp">
 
-    <EditText
-        android:id="@+id/edt_age"
+    <ss.anoop.awesometextinputlayout.AwesomeTextInputLayout
+        android:id="@+id/age_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter Age"
-        android:inputType="number"
-        android:layout_margin="16dp"/>
+        android:layout_margin="16dp"
+        app:borderColor="@color/lavender"
+        app:borderWidth="2dp"
+        app:cornerRadius="8dp">
 
-    <EditText
-        android:id="@+id/edt_height"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Enter Height (cm)"
-        android:inputType="numberDecimal"
-        android:layout_below="@id/edt_age"
-        android:layout_margin="16dp"/>
+        <EditText
+            android:id="@+id/edt_age"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter Age"
+            android:inputType="number" />
 
-    <EditText
-        android:id="@+id/edt_weight"
+    </ss.anoop.awesometextinputlayout.AwesomeTextInputLayout>
+
+    <ss.anoop.awesometextinputlayout.AwesomeTextInputLayout
+        android:id="@+id/height_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter Weight (kg)"
-        android:inputType="numberDecimal"
-        android:layout_below="@id/edt_height"
-        android:layout_margin="16dp"/>
+        android:layout_below="@id/age_layout"
+        android:layout_margin="16dp"
+        app:borderColor="@color/lavender"
+        app:borderWidth="2dp"
+        app:cornerRadius="8dp">
+
+        <EditText
+            android:id="@+id/edt_height"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter Height (cm)"
+            android:inputType="numberDecimal" />
+
+    </ss.anoop.awesometextinputlayout.AwesomeTextInputLayout>
+
+    <ss.anoop.awesometextinputlayout.AwesomeTextInputLayout
+        android:id="@+id/weight_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/height_layout"
+        android:layout_margin="16dp"
+        app:borderColor="@color/lavender"
+        app:borderWidth="2dp"
+        app:cornerRadius="8dp">
+
+        <EditText
+            android:id="@+id/edt_weight"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter Weight (kg)"
+            android:inputType="numberDecimal" />
+
+    </ss.anoop.awesometextinputlayout.AwesomeTextInputLayout>
 
     <Spinner
         android:id="@+id/activityLevelSpinner"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/edt_weight"
-        android:layout_margin="16dp"/>
+        android:layout_below="@id/weight_layout"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp" />
 
     <Button
         android:id="@+id/btn_calculate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Calculate"
         android:layout_below="@id/activityLevelSpinner"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="16dp"/>
+        android:layout_marginTop="16dp"
+        android:text="Calculate" />
 
     <TextView
         android:id="@+id/tdeeTextView"
@@ -52,8 +86,8 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/btn_calculate"
         android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
         android:textSize="25sp"
-        android:textStyle="bold"
-        android:layout_marginTop="16dp"/>
+        android:textStyle="bold" />
 
 </RelativeLayout>

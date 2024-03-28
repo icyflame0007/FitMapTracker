@@ -5,9 +5,8 @@ import android.content.pm.PackageManager
 import android.location.Location
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
-import com.example.fitmaptracker.R
 
+import com.example.fitmaptracker.R
 
 import android.widget.Button
 import android.widget.EditText
@@ -49,20 +48,17 @@ class DonateBloodActivity : AppCompatActivity() {
         submitButton = findViewById(R.id.submitButton)
 
         submitButton.setOnClickListener {
-
             val name = nameEditText.text.toString().trim()
             val bloodGroup = bloodGroupEditText.text.toString().trim()
             val genderId = genderRadioGroup.checkedRadioButtonId
-            val gender = findViewById<RadioButton>(genderId).text.toString()
+            val gender = if (genderId != -1) findViewById<RadioButton>(genderId).text.toString() else ""
             val age = ageEditText.text.toString().trim().toIntOrNull() ?: 0
             val phoneNumber = phoneNumberEditText.text.toString().trim()
 
-            Log.d("TAGOK","${name}")
-            Log.d("TAGOK","${bloodGroup}")
-            Log.d("TAGOK","${gender}")
-            Log.d("TAGOK","${age}")
-            Log.d("TAGOK","${phoneNumber}")
-
+            if (name.isEmpty() || bloodGroup.isEmpty() || gender.isEmpty() || age == 0 || phoneNumber.isEmpty()) {
+                Toast.makeText(this, "Enter all the required fields", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
 
             if (ActivityCompat.checkSelfPermission(
                     this,
@@ -72,27 +68,16 @@ class DonateBloodActivity : AppCompatActivity() {
                     android.Manifest.permission.ACCESS_COARSE_LOCATION
                 ) != PackageManager.PERMISSION_GRANTED
             ) {
-                //  TODO: Consider calling
-                //    ActivityCompat#requestPermissions
-                // here to request the missing permissions, and then overriding
-                //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
-                //                                          int[] grantResults)
-                // to handle the case where the user grants the permission. See the documentation
-                // for ActivityCompat#requestPermissions for more details.
-
-
-                ActivityCompat.requestPermissions(this,
+                ActivityCompat.requestPermissions(
+                    this,
                     arrayOf(
                         android.Manifest.permission.ACCESS_FINE_LOCATION,
                         android.Manifest.permission.ACCESS_COARSE_LOCATION
                     ),
                     REQUEST_LOCATION_PERMISSION
                 )
-            }
-            else{
-
-
-            fusedLocationClient.lastLocation.addOnSuccessListener { location: Location? ->
+            } else {
+                fusedLocationClient.lastLocation.addOnSuccessListener { location: Location? ->
                     val latitude = location?.latitude ?: 0.0
                     val longitude = location?.longitude ?: 0.0
                     val locationString = "$latitude,$longitude"
@@ -108,12 +93,8 @@ class DonateBloodActivity : AppCompatActivity() {
                         .addOnFailureListener {
                             // Handle failure
                         }
-
                 }
             }
-
-
-
         }
     }
 
@@ -123,7 +104,6 @@ class DonateBloodActivity : AppCompatActivity() {
         genderRadioGroup.clearCheck()
         ageEditText.text.clear()
         phoneNumberEditText.text.clear()
-
     }
 
     override fun onRequestPermissionsResult(
@@ -142,13 +122,6 @@ class DonateBloodActivity : AppCompatActivity() {
                         android.Manifest.permission.ACCESS_COARSE_LOCATION
                     ) != PackageManager.PERMISSION_GRANTED
                 ) {
-                    // TODO: Consider calling
-                    //    ActivityCompat#requestPermissions
-                    // here to request the missing permissions, and then overriding
-                    //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
-                    //                                          int[] grantResults)
-                    // to handle the case where the user grants the permission. See the documentation
-                    // for ActivityCompat#requestPermissions for more details.
                     return
                 }
                 fusedLocationClient.lastLocation
@@ -181,5 +154,4 @@ class DonateBloodActivity : AppCompatActivity() {
             }
         }
     }
-
 }

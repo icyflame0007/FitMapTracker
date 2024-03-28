@@ -114,8 +114,17 @@ dependencies {
 
     implementation ("nl.joery.animatedbottombar:library:1.1.0")
 
-
+    //firebase
     implementation ("com.google.firebase:firebase-database-ktx:20.3.1")
+
+
+    //customedittext
+
+
+
+
+    implementation ("ss.anoop:awesome-textinput-layout:1.0.3")
+
 
 
 }

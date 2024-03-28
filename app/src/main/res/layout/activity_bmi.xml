@@ -2,34 +2,62 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_marginTop="100dp"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:layout_marginTop="100dp">
 
-    <EditText
-        android:id="@+id/edt_height"
+    <ss.anoop.awesometextinputlayout.AwesomeTextInputLayout
+        android:id="@+id/height_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter Height (cm)"
-        android:inputType="numberDecimal"
-        android:layout_margin="16dp"/>
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:padding="16dp"
+        app:borderColor="@color/lavender"
+        app:borderWidth="2dp"
+        app:cornerRadius="8dp">
 
-    <EditText
-        android:id="@+id/edt_weight"
+        <EditText
+            android:id="@+id/edt_height"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter Height (cm)"
+            android:inputType="numberDecimal" />
+
+    </ss.anoop.awesometextinputlayout.AwesomeTextInputLayout>
+
+    <ss.anoop.awesometextinputlayout.AwesomeTextInputLayout
+        android:id="@+id/weight_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter Weight (kg)"
-        android:inputType="numberDecimal"
-        android:layout_below="@id/edt_height"
-        android:layout_margin="16dp"/>
+        android:layout_below="@id/height_layout"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:padding="16dp"
+        app:borderColor="@color/lavender"
+        app:borderWidth="2dp"
+        app:cornerRadius="8dp">
+
+        <EditText
+            android:id="@+id/edt_weight"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter Weight (kg)"
+            android:inputType="numberDecimal" />
+
+    </ss.anoop.awesometextinputlayout.AwesomeTextInputLayout>
 
     <Button
         android:id="@+id/btn_calculate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Calculate"
-        android:layout_below="@id/edt_weight"
+        android:layout_below="@id/weight_layout"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="16dp"/>
+        android:layout_marginTop="16dp"
+        android:text="Calculate" />
 
     <TextView
         android:id="@+id/bmiTextView"
@@ -37,45 +65,42 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/btn_calculate"
         android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
         android:textSize="25sp"
-        android:textStyle="bold"
-        android:layout_marginTop="16dp"/>
+        android:textStyle="bold" />
 
     <androidx.cardview.widget.CardView
-        android:layout_width="350dp"
-        android:visibility="gone"
         android:id="@+id/cardView"
+        android:layout_width="350dp"
         android:layout_height="350dp"
-        android:layout_marginBottom="100dp"
         android:layout_below="@id/btn_calculate"
-        android:layout_alignStart="@+id/edt_weight"
-        android:layout_alignEnd="@+id/edt_weight"
+        android:layout_alignStart="@+id/weight_layout"
+        android:layout_alignEnd="@+id/weight_layout"
         android:layout_marginStart="72dp"
         android:layout_marginTop="105dp"
-        app:cardCornerRadius="20dp"
-        android:layout_marginEnd="57dp">
+        android:layout_marginEnd="57dp"
+        android:layout_marginBottom="100dp"
+        android:visibility="gone"
+        app:cardCornerRadius="20dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:background="@drawable/cardview_background"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:background="@drawable/cardview_background">
 
             <TextView
+                android:id="@+id/txtcardviewresult"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/txtcardviewresult"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                android:textStyle="bold"
                 android:textColor="@color/white"
                 android:textSize="25sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-
 
     </androidx.cardview.widget.CardView>
 

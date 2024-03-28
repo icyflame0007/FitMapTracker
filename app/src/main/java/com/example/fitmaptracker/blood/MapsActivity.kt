@@ -4,12 +4,15 @@ import android.Manifest
 import android.app.AlertDialog
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.graphics.drawable.Drawable
 import android.location.Location
 import android.location.LocationManager
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.Button
+import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.core.app.ActivityCompat
@@ -158,21 +161,44 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback,GoogleMap.OnMarkerC
 
 
     private fun showDonorDetails(donor: DonarModel) {
+
+        val dialogView = layoutInflater.inflate(R.layout.alert_dialog_blood, null)
+        val donorName = dialogView.findViewById<TextView>(R.id.donor_name)
+        val donorBloodGroup = dialogView.findViewById<TextView>(R.id.donor_blood_group)
+        val donorGender = dialogView.findViewById<TextView>(R.id.donor_gender)
+        val donorAge = dialogView.findViewById<TextView>(R.id.donor_age)
+        val donorPhoneNumber = dialogView.findViewById<TextView>(R.id.donor_phone_number)
+
+        donorName.text = donor.name
+        donorBloodGroup.text = donor.bloodGroup
+        donorGender.text = donor.gender
+        donorAge.text = donor.age.toString()
+        donorPhoneNumber.text = donor.phoneNumber
+
+        val callButton = dialogView.findViewById<Button>(R.id.btn_call)
+        val cancelButton = dialogView.findViewById<Button>(R.id.btn_cancel)
+
         val builder = AlertDialog.Builder(this)
-        builder.setTitle(donor.name)
-            .setMessage(
-                "Blood Group: ${donor.bloodGroup}\n" +
-                        "Gender: ${donor.gender}\n" +
-                        "Age: ${donor.age}\n" +
-                        "Phone Number: ${donor.phoneNumber}"
-            )
-            .setPositiveButton("Call") { _, _ ->
-                val intent = Intent(Intent.ACTION_DIAL)
-                intent.data = Uri.parse("tel:${donor.phoneNumber}")
-                startActivity(intent)
-            }
-            .setNegativeButton("Cancel", null)
-            .show()
+            .setView(dialogView)
+
+        val dialog = builder.create()
+        val dialogbg : Drawable? = ContextCompat.getDrawable(this,R.drawable.alert_dialog_shape)
+        dialog.window?.setBackgroundDrawable(dialogbg)
+
+
+
+        callButton.setOnClickListener {
+            val intent = Intent(Intent.ACTION_DIAL)
+            intent.data = Uri.parse("tel:${donor.phoneNumber}")
+            startActivity(intent)
+            dialog.dismiss()
+        }
+
+        cancelButton.setOnClickListener {
+            dialog.dismiss()
+        }
+
+        dialog.show()
     }
 
 
