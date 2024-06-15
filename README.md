@@ -20,44 +20,68 @@ Download link for the application
 
 These are some snapshots from the application
 
- Setup Fragment
- 
-![SetupFragment](https://github.com/icyflame0007/FitTrack-BloodLink/assets/129135376/9e7a6ea6-f886-4878-a20b-9af145fa65ae)
-
-
- Run Fragment
- 
-![runsfragment](https://github.com/icyflame0007/FitTrack-BloodLink/assets/129135376/9da0559f-0169-469a-9f71-4b8aca9a4a5b)
-
-Tracking Fragment
-
-![Tracking](https://github.com/icyflame0007/FitTrack-BloodLink/assets/129135376/f90e17fd-1003-4d7d-9515-779e7275c742)
-
-Statistics Fragment
-
-![settingsfragment2](https://github.com/icyflame0007/FitTrack-BloodLink/assets/129135376/84db69d4-92ed-4094-a7be-af485a91fc8b)
 
 
 
-Settings Fragment
-
-![settingsfragment](https://github.com/icyflame0007/FitTrack-BloodLink/assets/129135376/9f795cad-41b9-4fc8-b4fe-1f06c2e21744)
 
 
-Donate Blood Activity
 
 
-![DonateBlood](https://github.com/icyflame0007/FitTrack-BloodLink/assets/129135376/e923e923-c4e1-46be-bec0-89d6deeaf8fd)
 
 
-Request Blood Activity
+![runfragment](https://github.com/icyflame0007/FitTrack-BloodLink/assets/129135376/232fd56b-4b54-4c8d-8a50-df8d9499649a )
 
 
-![NearbyDonars](https://github.com/icyflame0007/FitTrack-BloodLink/assets/129135376/4ad99479-c462-4241-96ea-f71af6fdaf52)
 
 
-Dialog box showing details of the donar
 
 
-![RequestBlooddialog](https://github.com/icyflame0007/FitTrack-BloodLink/assets/129135376/fa80d3dc-48ff-4872-a3df-6b82450e1694)
 
+
+
+
+![stats](https://github.com/icyflame0007/FitTrack-BloodLink/assets/129135376/662247c7-315a-44fa-99b1-debf66d4e4fa)
+
+
+
+
+
+
+
+
+
+
+![settings](https://github.com/icyflame0007/FitTrack-BloodLink/assets/129135376/4f48dccf-5606-4179-9cdd-4f989f6eb0b9)
+
+
+
+
+
+
+
+
+
+
+![bloodregister](https://github.com/icyflame0007/FitTrack-BloodLink/assets/129135376/660f122c-7133-454c-a20b-c534928e2bd6)
+
+
+
+
+
+
+
+
+
+
+![map](https://github.com/icyflame0007/FitTrack-BloodLink/assets/129135376/3774b7bb-aeeb-45dd-9f7e-293ae66d72dc)
+
+
+
+
+
+
+
+
+
+
+![details](https://github.com/icyflame0007/FitTrack-BloodLink/assets/129135376/d3ab7c36-3da6-4c37-842f-47936c705177)
